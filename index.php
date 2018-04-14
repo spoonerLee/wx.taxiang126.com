@@ -1,6 +1,6 @@
 <?php  
 /** 
-  * wechat php test 
+  * wechat php test  hahaha
   */  
 ini_set('display_errors',1);            //错误信息  
 ini_set('display_startup_errors',1);  
