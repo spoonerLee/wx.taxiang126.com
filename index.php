@@ -2,7 +2,7 @@
 /** 
   * wechat php test  hahaha
   */  
-//123
+//123567
 ini_set('display_errors',1);            //错误信息  
 ini_set('display_startup_errors',1);  
 ini_set('error_log', dirname(__FILE__) . '/error_log.txt');
