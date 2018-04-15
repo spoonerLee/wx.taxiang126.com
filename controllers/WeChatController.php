@@ -7,7 +7,7 @@
  */
 
 namespace app\controllers;
-
+use Yii;
 /**
  * Description of WeChatController
  *
@@ -21,7 +21,8 @@ class WeChatController extends \yii\web\Controller{
     
     public function valid()//验证接口的方法  
     {  
-        $echoStr = $_GET["echostr"];//从微信用户端获取一个随机字符赋予变量echostr  
+        
+        $echoStr = Yii::$app->request->get("echostr");//从微信用户端获取一个随机字符赋予变量echostr  
         //valid signature , option访问地61行的checkSignature签名验证方法，如果签名一致，输出变量echostr，完整验证配置接口的操作  
         if($this->checkSignature()){  
             echo $echoStr;  
@@ -83,9 +84,9 @@ class WeChatController extends \yii\web\Controller{
     
     private function checkSignature()  
     {  
-        $signature = $_GET["signature"];//从用户端获取签名赋予变量signature  
-        $timestamp = $_GET["timestamp"];//从用户端获取时间戳赋予变量timestamp  
-        $nonce = $_GET["nonce"];    //从用户端获取随机数赋予变量nonce  
+        $signature =Yii::$app->request->get("signature");//从用户端获取签名赋予变量signature  
+        $timestamp =Yii::$app->request->get("timestamp");//从用户端获取时间戳赋予变量timestamp  
+        $nonce =Yii::$app->request->get("nonce");    //从用户端获取随机数赋予变量nonce  
                   
         $token = "spooner";//将常量token赋予变量token  
         $tmpArr = array($token, $timestamp, $nonce);//简历数组变量tmpArr  
