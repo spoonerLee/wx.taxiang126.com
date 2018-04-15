@@ -65,13 +65,13 @@ class WeChatController extends \yii\web\Controller{
                     $contentStr = "Welcome to yii2 wechat world!";//我们进行文本输入的内容，变量名为contentStr，如果你要更改回复信息，就在这儿  
                     $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);//将XML格式中的变量分别赋值。注意sprintf函数  
                     
-                    $user='root';      //数据库连接用户名
-                    $pass='root123456';          //对应的密码
-                    $dbh = new PDO('mysql:host=localhost;dbname=wx', $user, $pass);
-                    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    $sql = "INSERT INTO message (ToUserName, FromUserName, CreateTime,MsgType,Content)"
-                            . " VALUES ('$toUsername', '$fromUsername', ". time().",'text','$keyword')";
-                    $dbh->exec($sql);
+//                    $user='root';      //数据库连接用户名
+//                    $pass='root123456';          //对应的密码
+//                    $dbh = new PDO('mysql:host=localhost;dbname=wx', $user, $pass);
+//                    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+//                    $sql = "INSERT INTO message (ToUserName, FromUserName, CreateTime,MsgType,Content)"
+//                            . " VALUES ('$toUsername', '$fromUsername', ". time().",'text','$keyword')";
+//                    $dbh->exec($sql);
                     echo $resultStr;//输出回复信息，即发送微信  
                 }else{  
                     echo "Input something...";//不发送到微信端，只是测试使用  
