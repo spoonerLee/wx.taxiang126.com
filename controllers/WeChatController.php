@@ -15,6 +15,8 @@ use Yii;
  */
 class WeChatController extends \yii\web\Controller{
     //put your code here
+    public $enableCsrfValidation = false;
+    
     public function actionIndex() {
         //$this->valid();
         $this->responseMsg();
