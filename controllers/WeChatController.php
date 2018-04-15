@@ -16,7 +16,8 @@ use Yii;
 class WeChatController extends \yii\web\Controller{
     //put your code here
     public function actionIndex() {
-        $this->valid();
+        //$this->valid();
+        $this->responseMsg();
     }
     
     public function valid()//验证接口的方法  
@@ -61,7 +62,7 @@ class WeChatController extends \yii\web\Controller{
                 if(!empty( $keyword ))//如果用户端微信发来的文本内容不为空，执行46--51否则52--53  
                 {  
                     $msgType = "text";//回复文本信息类型为text型，变量类型为msgType  
-                    $contentStr = "Welcome to wechat world!";//我们进行文本输入的内容，变量名为contentStr，如果你要更改回复信息，就在这儿  
+                    $contentStr = "Welcome to yii2 wechat world!";//我们进行文本输入的内容，变量名为contentStr，如果你要更改回复信息，就在这儿  
                     $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);//将XML格式中的变量分别赋值。注意sprintf函数  
                     
                     $user='root';      //数据库连接用户名
