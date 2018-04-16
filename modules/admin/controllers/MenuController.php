@@ -1,7 +1,7 @@
 <?php
 
 namespace app\modules\admin\controllers;
-
+use Yii;
 class MenuController extends AdminBaseController{
     //put your code here
     public function actionIndex() {
