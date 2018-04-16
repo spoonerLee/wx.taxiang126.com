@@ -31,7 +31,7 @@ class AdminBaseController extends Controller{
             Yii::$app->response->cookies->add(new \yii\web\Cookie([
                 'name' => 'access_token',
                 'value' => $data["access_token"],
-                'expires_in' => 7200,
+                'expire' => time()+7200,
             ]));
         }
         
