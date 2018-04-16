@@ -21,7 +21,7 @@ class AdminBaseController extends Controller{
         if (Yii::$app->user->isGuest) {
             return $this->redirect(\yii\helpers\Url::to(["/admin/default/index"]));
         }   
-        if (!Yii::$app->request->cookies->has('language')){
+        if (!Yii::$app->request->cookies->has('access_token')){
             $url="https://api.weixin.qq.com/cgi-bin/token?"
                 . "grant_type=client_credential"
                 . "&appid=".Yii::$app->params['appid']
