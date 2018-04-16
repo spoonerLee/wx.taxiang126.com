@@ -27,7 +27,7 @@ class AdminBaseController extends Controller{
                 . "&appid=".Yii::$app->params['appid']
                 . "&secret=".Yii::$app->params['appsecret'];
             $response= file_get_contents($url);
-            $data= json_decode($response);
+            $data= json_decode($response,TRUE);
             Yii::$app->response->cookies->add(new \yii\web\Cookie([
                 'name' => 'access_token',
                 'value' => $data["access_token"],
