@@ -1,11 +1,6 @@
 <?php
-
-/* @var $this \yii\web\View */
-/* @var $content string */
-
 use yii\helpers\Html;
-use app\assets\AppAsset;
-AppAsset::register($this);
+use yii\helpers\Url;
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -52,7 +47,7 @@ AppAsset::register($this);
             <li >
             <a href="/index.php/admin/info/toupdate">网站设置</a></li>
             <li >
-            <a href="/index.php/admin/doc_kinds/index">文章分类</a></li>
+                <a href="<?= Url::to(["/admin/menu/index"])?>">菜单设置</a></li>
             <li >
             <a href="/index.php/admin/doc/index">文章</a></li>
             <li >
